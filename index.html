@@ -1,1 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Er. Meraj Ansari - Civil Engineer, AutoCAD 2D, Civil Drafting and Site Execution Professional.">
+  <title>Er. Meraj Ansari | Civil Engineer Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #090b0d;
+      color: #f5f5f5;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 90%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(9,11,13,.95);
+      border-bottom: 1px solid #292d31;
+      backdrop-filter: blur(12px);
+    }
+    nav {
+      min-height: 72px; display: flex;
+      align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { font-size: 20px; font-weight: 800; letter-spacing: 1px; }
+    .brand span { color: #c5a572; }
+    .navlinks { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; }
+    .navlinks a:hover { color: #c5a572; }
+    .hero {
+      min-height: 570px; display: flex; align-items: center;
+      background: linear-gradient(90deg, #090b0d 5%, rgba(9,11,13,.94) 40%, rgba(9,11,13,.28) 100%),
+      url('assets/hero.jpg') center/cover no-repeat;
+      border-bottom: 1px solid #292d31;
+    }
+    .hero-content { padding-top: 70px; padding-bottom: 70px; }
+    .eyebrow { color: #c5a572; text-transform: uppercase; letter-spacing: 3px; font-size: 12px; }
+    h1 { font-size: clamp(38px, 7vw, 68px); line-height: 1.12; margin: 15px 0; }
+    h1 span { color: #c5a572; }
+    .hero h2 { font-size: 18px; color: #ddd; font-weight: 500; }
+    .intro { max-width: 580px; color: #b9bec4; margin: 20px 0 28px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 11px 20px;
+      border: 1px solid #c5a572; border-radius: 5px;
+      font-weight: bold; font-size: 13px; transition: .2s;
+    }
+    .btn.primary { background: #c5a572; color: #111; }
+    .btn:hover { transform: translateY(-2px); }
+    section { padding: 75px 0; border-bottom: 1px solid #24282c; }
+    .section-label { color: #c5a572; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; }
+    h2.section-title { font-size: clamp(28px, 4vw, 40px); margin: 5px 0 28px; }
+    .muted { color: #aeb4bb; }
+    .about-grid, .experience-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 35px; align-items: center; }
+    .cinematic-image {
+      min-height: 310px; border-radius: 8px;
+      background: linear-gradient(0deg, rgba(0,0,0,.2), rgba(0,0,0,.05)), url('assets/building.jpg') center/cover;
+      border: 1px solid #30343a;
+    }
+    .facts { display: grid; gap: 12px; }
+    .fact, .card {
+      padding: 20px; background: #111518;
+      border: 1px solid #292e32; border-radius: 8px;
+    }
+    .fact strong { display: block; color: #c5a572; font-size: 19px; }
+    .skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card h3 { margin-bottom: 8px; font-size: 17px; }
+    .card p, .card li { color: #aeb4bb; font-size: 14px; }
+    .card ul { padding-left: 18px; }
+    .tag {
+      display: inline-block; margin-top: 12px; padding: 4px 9px;
+      border: 1px solid #494035; color: #d5bb91; border-radius: 20px; font-size: 11px;
+    }
+    .timeline { border-left: 2px solid #c5a572; padding-left: 24px; }
+    .timeline-item { margin-bottom: 25px; }
+    .timeline-item h3 { font-size: 18px; }
+    .timeline-item .date { color: #c5a572; font-size: 13px; }
+    .project-image {
+      height: 150px; margin: -20px -20px 16px;
+      border-radius: 8px 8px 0 0; background-size: cover; background-position: center;
+      background-color: #24282c;
+    }
+    .project-one { background-image: url('assets/project-building.jpg'); }
+    .project-two { background-image: url('assets/project-drawing.jpg'); }
+    .project-three { background-image: url('assets/project-web.jpg'); }
+    .project-four { background-image: url('assets/project-infrastructure.jpg'); }
+    .contact-box {
+      background: #111518; border: 1px solid #34383c;
+      padding: 30px; border-radius: 10px;
+    }
+    footer { padding: 25px 0; color: #9299a1; font-size: 12px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      nav { align-items: flex-start; flex-direction: column; padding: 16px 0; }
+      .navlinks { gap: 12px; }
+      .hero { min-height: 520px; background-position: 62% center; }
+      .about-grid, .experience-grid { grid-template-columns: 1fr; }
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      section { padding: 55px 0; }
+      .cinematic-image { min-height: 240px; }
+    }
+  </style>
+</head>
+<body>
 
+<header>
+  <nav class="container">
+    <a class="brand" href="#home">MA<span>.</span> MERAJ ANSARI</a>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <p class="eyebrow">Civil Engineering · Site Execution · Drafting</p>
+      <h1>Er. Meraj<br><span>Ansari.</span></h1>
+      <h2>Civil Engineer | AutoCAD 2D | Civil Drafting</h2>
+      <p class="intro">
+        Diploma Civil Engineer with practical experience in construction and site execution.
+        Skilled in drawing interpretation, BBS preparation, RCC work, site supervision and
+        AutoCAD 2D knowledge, with a strong interest in developing a career in Civil Design.
+      </p>
+      <div class="buttons">
+        <a class="btn primary" href="assets/meraj-cv.pdf" download>↓ Download My CV</a>
+        <a class="btn" href="#projects">Explore My Work ↘</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="cinematic-image" role="img" aria-label="Construction site visual"></div>
+      <div>
+        <p class="section-label">A little about me</p>
+        <h2 class="section-title">Building with purpose.</h2>
+        <p class="muted">
+          I am a Diploma Civil Engineer with professional experience in civil construction
+          and site execution. My work has included reading architectural and structural
+          drawings, preparing Bar Bending Schedules, supervising RCC and brick masonry,
+          field surveying, profile levelling and calculating material quantities.
+        </p><br>
+        <p class="muted">
+          I am interested in opportunities where I can combine my practical construction
+          knowledge with AutoCAD 2D and continue developing my civil drafting and design skills.
+        </p><br>
+        <div class="facts">
+          <div class="fact"><strong>4+ Years</strong><span class="muted">Civil construction experience</span></div>
+          <div class="fact"><strong>Diploma</strong><span class="muted">Civil Engineering · Government Polytechnic, Lucknow</span></div>
+          <div class="fact"><strong>Career Goal</strong><span class="muted">Civil Design & CAD Drafting</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <p class="section-label">What I bring</p>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <article class="card"><h3>AutoCAD 2D</h3><p>Design and drafting knowledge, with an interest in architectural and structural drawings.</p><span class="tag">CAD</span></article>
+        <article class="card"><h3>Drawing Interpretation</h3><p>Reading and analysing architectural and structural drawings for site execution.</p><span class="tag">Technical</span></article>
+        <article class="card"><h3>Bar Bending Schedule</h3><p>BBS preparation and reinforcement-related calculations using MS Excel.</p><span class="tag">RCC</span></article>
+        <article class="card"><h3>Site Execution</h3><p>RCC work, brick masonry, quality checks, inspection and supervision.</p><span class="tag">Construction</span></article>
+        <article class="card"><h3>Surveying & Levelling</h3><p>Field surveying and profile levelling using an Auto Level.</p><span class="tag">Survey</span></article>
+        <article class="card"><h3>Office & Digital Skills</h3><p>MS Excel, MS Word, beginner-level Python and website designing.</p><span class="tag">Digital</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container experience-grid">
+      <div>
+        <p class="section-label">Professional journey</p>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <p class="date">November 2023 – Present</p>
+            <h3>Civil Engineer</h3>
+            <p>M/s Inderjit Mehta Construction Pvt. Ltd.</p>
+            <ul class="muted">
+              <li>BBS preparation and maintenance using MS Excel.</li>
+              <li>Architectural and structural drawing interpretation.</li>
+              <li>RCC work supervision and brick masonry execution.</li>
+              <li>Field surveys, profile levelling and material calculations.</li>
+              <li>Site activity and manpower coordination.</li>
+            </ul>
+          </div>
+          <div class="timeline-item">
+            <p class="date">April 2022 – November 2023</p>
+            <h3>Civil Engineer</h3>
+            <p>Balaji Infrastructure Pvt. Ltd. (Renew Power)</p>
+            <ul class="muted">
+              <li>Drawing interpretation and civil work execution.</li>
+              <li>Site inspection, supervision and coordination.</li>
+              <li>BBS preparation and quantity calculations.</li>
+              <li>Field surveying and profile levelling.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <p class="section-label">How I work</p>
+        <h3>Practical. Detail-oriented. Ready to learn.</h3>
+        <p>I bring practical knowledge of construction activities, drawing reading,
+        site coordination and a willingness to grow into design-focused responsibilities.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <p class="section-label">Selected work & areas of experience</p>
+      <h2 class="section-title">Projects & Portfolio</h2>
+      <p class="muted" style="margin-bottom:25px">
+        The following cards represent work areas and personal projects. Add real photographs,
+        drawings and verified project details to turn these into a detailed work portfolio.
+      </p>
+      <div class="projects-grid">
+        <article class="card">
+          <div class="project-image project-one"></div>
+          <h3>Construction & Site Execution</h3>
+          <p>Site supervision, RCC work, brick masonry, quality checks and coordination.</p>
+          <span class="tag">Professional experience</span>
+        </article>
+        <article class="card">
+          <div class="project-image project-two"></div>
+          <h3>Civil Drawings & BBS</h3>
+          <p>Drawing interpretation, reinforcement schedules and Excel-based calculations.</p>
+          <span class="tag">Technical work</span>
+        </article>
+        <article class="card">
+          <div class="project-image project-web"></div>
+          <h3>Resize Guru</h3>
+          <p>A personal website project showcasing an interest in web design and digital tools.</p>
+          <a class="tag" href="https://rrrbje-a11y.github.io/resize-guru/" target="_blank" rel="noopener">View Website ↗</a>
+        </article>
+        <article class="card">
+          <div class="project-image project-infrastructure"></div>
+          <h3>Engineering & Infrastructure</h3>
+          <p>Practical exposure to civil construction activities, surveying and site coordination.</p>
+          <span class="tag">Civil engineering</span>
+        </article>
+        <article class="card">
+          <div class="project-image project-web"></div>
+          <h3>Personal Website</h3>
+          <p>My existing online work and experiments in website designing.</p>
+          <a class="tag" href="https://ermeraj.github.io" target="_blank" rel="noopener">Visit Website ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="container">
+      <p class="section-label">Academic background</p>
+      <h2 class="section-title">Education & Certification</h2>
+      <div class="skills-grid">
+        <article class="card">
+          <h3>Diploma in Civil Engineering</h3>
+          <p>Government Polytechnic, Lucknow</p>
+          <p>Board of Technical Education, Uttar Pradesh</p>
+          <span class="tag">73%</span>
+        </article>
+        <article class="card">
+          <h3>Intermediate</h3>
+          <p>Uttar Pradesh Board</p>
+          <span class="tag">84.5%</span>
+        </article>
+        <article class="card">
+          <h3>High School</h3>
+          <p>Uttar Pradesh Board</p>
+          <span class="tag">84%</span>
+        </article>
+        <article class="card">
+          <h3>Yuva AI For All</h3>
+          <p>AI certification as listed in my CV.</p>
+          <span class="tag">Artificial Intelligence</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <p class="section-label">Let's connect</p>
+      <h2 class="section-title">Ready for the next opportunity.</h2>
+      <div class="contact-box">
+        <p class="muted">I am interested in opportunities in Civil Engineering, Site Execution,
+        AutoCAD 2D and Civil Design/Drafting where I can contribute and continue to learn.</p><br>
+        <div class="buttons">
+          <a class="btn primary" href="mailto:meraj274302@gmail.com">✉ Email Me</a>
+          <a class="btn" href="tel:+919923343901">☎ Call Me</a>
+          <a class="btn" href="https://wa.me/919923343901" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn" href="assets/meraj-cv.pdf" target="_blank" rel="noopener">View CV</a>
+        </div>
+        <p class="muted" style="margin-top:20px">Location: Kushinagar, Uttar Pradesh, India · Open to opportunities across India.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <p>© <span id="year"></span> Er. Meraj Ansari. All rights reserved.</p>
+    <p>Civil Engineering · Design · Construction</p>
+  </div>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
